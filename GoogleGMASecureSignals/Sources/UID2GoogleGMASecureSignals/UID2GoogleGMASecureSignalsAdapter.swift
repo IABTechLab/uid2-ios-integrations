@@ -40,7 +40,7 @@ extension UID2GoogleGMASecureSignalsAdapter: GADRTBAdapter {
     public static func adSDKVersion() -> GADVersionNumber {
         var versionNumber = GADVersionNumber()
         versionNumber.majorVersion = 10
-        versionNumber.minorVersion = 1
+        versionNumber.minorVersion = 2
         versionNumber.patchVersion = 0
         return versionNumber
     }
