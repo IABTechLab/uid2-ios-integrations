@@ -15,18 +15,16 @@ let package = Package(
             targets: ["UID2GoogleGMASecureSignals"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", exact: "0.0.1")
+        .package(url: "https://github.com/IABTechLab/uid2-ios-sdk.git", exact: "0.0.1"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads", exact: "10.2.0")
     ],
     targets: [
         .target(
             name: "UID2GoogleGMASecureSignals",
             dependencies: [
-                "GoogleMobileAds",
-                .product(name: "UID2", package: "uid2-ios-sdk")
+                .product(name: "UID2", package: "uid2-ios-sdk"),
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
         ]),
-        .binaryTarget(name: "GoogleMobileAds",
-                      url: "https://dl.google.com/googleadmobadssdk/googlemobileadssdkios.zip",
-                      checksum: "e8b46a316fe4690a529959121fbcf98c6570187176918422532557387c707eb4"),
         .testTarget(
             name: "UID2GoogleGMASecureSignalsTests",
             dependencies: ["UID2GoogleGMASecureSignals"])
